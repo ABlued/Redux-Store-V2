@@ -1,6 +1,7 @@
 import * as Actions from "./actions.js";
 import { reducer } from "./reducer.js";
 import { createStore } from "./redux.js";
+import { logger } from "./logger.js";
 
 const middleware1 = (store) => (next) => (action) => {
   console.log("middleware1", action);
@@ -15,7 +16,12 @@ const middleware3 = (store) => (next) => (action) => {
   next(action);
 };
 
-const store = createStore(reducer, [middleware1, middleware2, middleware3]);
+const store = createStore(reducer, [
+  middleware1,
+  middleware2,
+  middleware3,
+  logger,
+]);
 
 store.subscribe(() => {
   console.log(store.getState());
