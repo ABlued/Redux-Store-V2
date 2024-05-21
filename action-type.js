@@ -2,3 +2,5 @@ export const INCREASE = "INCREASE";
 export const DECREASE = "DECREASE";
 export const RESET = "RESET";
 export const ASYNC_INCREASE_COUNTER = "ASYNC_INCREASE_COUNTER";
+export const ASYNC_REQUEST = "ASYNC_REQUEST";
+export const ASYNC_RESPONSE = "ASYNC_RESPONSE";

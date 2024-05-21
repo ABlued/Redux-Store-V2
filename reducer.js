@@ -2,6 +2,7 @@ import * as ActionType from "./action-type.js";
 
 const initialState = {
   count: 0,
+  loading: false,
 };
 
 export function reducer(state = initialState, action = {}) {
@@ -27,6 +28,16 @@ export function reducer(state = initialState, action = {}) {
       return {
         ...state,
         count: 0,
+      };
+    case ActionType.ASYNC_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case ActionType.ASYNC_RESPONSE:
+      return {
+        ...state,
+        loading: false,
       };
     default:
       return { ...state };

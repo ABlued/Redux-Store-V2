@@ -18,8 +18,10 @@ const asyncRouter = (jobs) => (store) => (next) => (action) => {
 
 const asyncJobs = {
   [ASYNC_INCREASE_COUNTER]: function (store, action) {
+    store.dispatch(Actions.asyncRequest());
     setTimeout(() => {
       store.dispatch(Actions.increase(20));
+      store.dispatch(Actions.asyncResponse());
     }, 3000);
   },
 };
